@@ -33,9 +33,7 @@ def get_log_path(path):
             with open(path, 'a+', encoding='utf-8') as file:
                 file.write(file_line)
             return result
-
         return foo
-
     return get_logfile
 
 
@@ -47,12 +45,11 @@ def web_scrapper(some_keywords):
         post_preview = article.find('div').text
         post_link = article.find('a', class_='tm-article-snippet__title-link').get('href')
         public_date = article.find('span', class_='tm-article-snippet__datetime-published').text
-
         for search_word in some_keywords:
             if (search_word.lower() in headline.lower()) or (search_word.lower() in post_preview.lower()) or \
                     (search_word.lower() in hubs.lower()):
                 pprint(f'Дата: {public_date} - Заголовок: {headline} - Ссылка: habr.com{post_link}')
-    return [public_date, headline, 'habr.com' + post_link]
+    return web_scrapper
 
 
 if __name__ == '__main__':

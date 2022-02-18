@@ -26,4 +26,4 @@ def get_status(*args, **kwargs):
 
 
 if __name__ == '__main__':
-    get_status('https://github.com/')
+    get_status('https://netology.ru')
